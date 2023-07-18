@@ -19,7 +19,7 @@ const Sidebar = () => {
     <div>
       <aside className="menu pl-2 has-shadow">
         <p className="menu-label">General</p>
-        <ul className="menu-list">
+        <ul className="menu-list text-sky-700">
           <li>
             <NavLink to={"/dashboard"}>
               <IoHome /> Dashboard

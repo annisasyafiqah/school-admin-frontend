@@ -21,7 +21,7 @@ const ProductList = () => {
 
   return (
     <div>
-      <h1 className="title">Products</h1>
+      <h1 className="title text-sky-700 ">Products</h1>
       <h2 className="subtitle">List of Products</h2>
       <Link to="/products/add" className="button is-primary mb-2">
         Add New
