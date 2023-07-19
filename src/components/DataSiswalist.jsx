@@ -10,12 +10,12 @@ const DataSiswaList = () => {
   }, []);
 
   const getDataSiswa = async () => {
-    const response = await axios.get("http://localhost:5000/dataSiswa");
+    const response = await axios.get("https://cautious-buckle-fawn.cyclic.app/dataSiswa");
     setDataSiswa(response.data);
   };
 
   const deleteDataSiswa = async (dataSiswaId) => {
-    await axios.delete(`http://localhost:5000/dataSiswa/${dataSiswaId}`);
+    await axios.delete(`https://cautious-buckle-fawn.cyclic.app/dataSiswa/${dataSiswaId}`);
     getDataSiswa();
   };
   const openInNewTab = (url) => {

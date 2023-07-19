@@ -11,7 +11,7 @@ const FormAddDataSiswa = () => {
   const saveDataSiswa = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/dataSiswa", {
+      await axios.post("https://cautious-buckle-fawn.cyclic.app/dataSiswa", {
         name: name,
         link: link,
       });
