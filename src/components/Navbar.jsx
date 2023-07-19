@@ -25,7 +25,7 @@ const Navbar = () => {
         <div className="navbar-brand">
           <NavLink to="/dashboard" className="navbar-item">
             <img src={logo} width="30" height="28" alt="logo" />
-            <p className="pl-2 text-sky-700" > SMPN1 Atambua</p>
+            <p className="pl-2" > SMPN1 Atambua</p>
           </NavLink>
 
           <a

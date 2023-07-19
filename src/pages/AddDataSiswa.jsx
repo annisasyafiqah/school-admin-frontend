@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import Layout from "./Layout";
-import FormAddProduct from "../components/FormAddProduct";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
+import FormAddDataSiswa from "../components/FormAddDataSiswa";
 
 const AddProduct = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const AddProduct = () => {
   }, [isError, navigate]);
   return (
     <Layout>
-      <FormAddProduct />
+      <FormAddDataSiswa />
     </Layout>
   );
 };

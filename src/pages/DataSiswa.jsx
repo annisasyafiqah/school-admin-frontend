@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import Layout from "./Layout";
-import FormAddProduct from "../components/FormAddProduct";
+import ProductList from "../components/ProductList";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
+import DataSiswaList from "../components/DataSiswalist";
 
-const AddProduct = () => {
+const Products = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -21,9 +22,9 @@ const AddProduct = () => {
   }, [isError, navigate]);
   return (
     <Layout>
-      <FormAddProduct />
+      <DataSiswaList />
     </Layout>
   );
 };
 
-export default AddProduct;
+export default Products;
