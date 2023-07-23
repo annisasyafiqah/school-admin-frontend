@@ -14,7 +14,7 @@ const FormAddUser = () => {
   const saveUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://cautious-buckle-fawn.cyclic.app/users", {
+      await axios.post("/api/users", {
         name: name,
         email: email,
         password: password,

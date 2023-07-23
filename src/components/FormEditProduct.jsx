@@ -13,7 +13,7 @@ const FormEditProduct = () => {
     const getProductById = async () => {
       try {
         const response = await axios.get(
-          `https://cautious-buckle-fawn.cyclic.app/products/${id}`
+          `/api/products/${id}`
         );
         setName(response.data.name);
         setPrice(response.data.price);
@@ -29,7 +29,7 @@ const FormEditProduct = () => {
   const updateProduct = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`https://cautious-buckle-fawn.cyclic.app/products/${id}`, {
+      await axios.patch(`/api/products/${id}`, {
         name: name,
         price: price,
       });

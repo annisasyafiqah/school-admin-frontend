@@ -10,12 +10,12 @@ const Userlist = () => {
   }, []);
 
   const getUsers = async () => {
-    const response = await axios.get("https://cautious-buckle-fawn.cyclic.app/users");
+    const response = await axios.get("/api/users");
     setUsers(response.data);
   };
 
   const deleteUser = async (userId) => {
-    await axios.delete(`https://cautious-buckle-fawn.cyclic.app/users/${userId}`);
+    await axios.delete(`/api/users/${userId}`);
     getUsers();
   };
 

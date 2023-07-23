@@ -13,7 +13,7 @@ const FormEditDataSiswa = () => {
     const getDataSiswaById = async () => {
       try {
         const response = await axios.get(
-          `https://cautious-buckle-fawn.cyclic.app/dataSiswa/${id}`
+          `/api/dataSiswa/${id}`
         );
         setName(response.data.name);
         setLink(response.data.link);
@@ -29,7 +29,7 @@ const FormEditDataSiswa = () => {
   const updateDataSiswa = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`https://cautious-buckle-fawn.cyclic.app/dataSiswa/${id}`, {
+      await axios.patch(`/api/dataSiswa/${id}`, {
         name: name,
         link: link,
       });

@@ -15,7 +15,7 @@ const FormEditUser = () => {
   useEffect(() => {
     const getUserById = async () => {
       try {
-        const response = await axios.get(`https://cautious-buckle-fawn.cyclic.app/users/${id}`);
+        const response = await axios.get(`/api/users/${id}`);
         setName(response.data.name);
         setEmail(response.data.email);
         setRole(response.data.role);
@@ -31,7 +31,7 @@ const FormEditUser = () => {
   const updateUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`https://cautious-buckle-fawn.cyclic.app/users/${id}`, {
+      await axios.patch(`/api/users/${id}`, {
         name: name,
         email: email,
         password: password,

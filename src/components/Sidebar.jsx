@@ -26,13 +26,54 @@ const Sidebar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/products"}>
-              <IoPricetag /> Products
+            <NavLink to={"/dataSiswa"}>
+              <IoPricetag /> Data Siswa
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/dataSiswa"}>
-              <IoPricetag /> Data Siswa
+            <NavLink to={"/dataGuru"}>
+              <IoPricetag /> Data Guru
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/dataGuru"}>
+              <IoPricetag /> Data Walas
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/dataGuru"}>
+              <IoPricetag /> Surat-surat
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/dataGuru"}>
+              <IoPricetag /> Kehadiran
+            </NavLink>
+          </li>
+        </ul>
+        <p className="menu-label">Kurikulum</p>
+        <ul className="menu-list text-sky-700">
+          <li>
+            <NavLink to={"/dashboard"}>
+              <IoHome /> RPP
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/products"}>
+              <IoPricetag /> Silabus/CP
+            </NavLink>
+          </li>
+        </ul>
+        <p className="menu-label">Keuangan</p>
+        <ul className="menu-list text-sky-700">
+          <li>
+            <NavLink to={"/dashboard"}>
+              <IoHome /> SPP
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/products"}>
+              <IoPricetag /> Perlengkapan
             </NavLink>
           </li>
         </ul>

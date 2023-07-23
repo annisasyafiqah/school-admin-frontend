@@ -10,12 +10,12 @@ const ProductList = () => {
   }, []);
 
   const getProducts = async () => {
-    const response = await axios.get("https://cautious-buckle-fawn.cyclic.app/products");
+    const response = await axios.get("/api/products");
     setProducts(response.data);
   };
 
   const deleteProduct = async (productId) => {
-    await axios.delete(`https://cautious-buckle-fawn.cyclic.app/products/${productId}`);
+    await axios.delete(`/api/products/${productId}`);
     getProducts();
   };
 

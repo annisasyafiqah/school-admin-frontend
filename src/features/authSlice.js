@@ -11,7 +11,7 @@ const initialState = {
 
 export const LoginUser = createAsyncThunk("user/LoginUser", async(user, thunkAPI) => {
     try {
-        const response = await axios.post('https://cautious-buckle-fawn.cyclic.app/login', {
+        const response = await axios.post('/api/login', {
             email: user.email,
             password: user.password
         });
@@ -26,7 +26,7 @@ export const LoginUser = createAsyncThunk("user/LoginUser", async(user, thunkAPI
 
 export const getMe = createAsyncThunk("user/getMe", async(_, thunkAPI) => {
     try {
-        const response = await axios.get('https://cautious-buckle-fawn.cyclic.app/me');
+        const response = await axios.get('/api/me');
         return response.data;
     } catch (error) {
         if(error.response){
@@ -37,7 +37,7 @@ export const getMe = createAsyncThunk("user/getMe", async(_, thunkAPI) => {
 });
 
 export const LogOut = createAsyncThunk("user/LogOut", async() => {
-    await axios.delete('https://cautious-buckle-fawn.cyclic.app/logout');
+    await axios.delete('/api/logout');
 });
 
 export const authSlice = createSlice({
