@@ -2,21 +2,21 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const DataSiswaList = () => {
-  const [dataSiswa, setDataSiswa] = useState([]);
+const DataSuratList = () => {
+  const [dataSurat, setDataSurat] = useState([]);
 
   useEffect(() => {
-    getDataSiswa();
+    getDataSurat();
   }, []);
 
-  const getDataSiswa = async () => {
-    const response = await axios.get("/api/dataSiswa");
-    setDataSiswa(response.data);
+  const getDataSurat = async () => {
+    const response = await axios.get("/api/dataSurat");
+    setDataSurat(response.data);
   };
 
-  const deleteDataSiswa = async (dataSiswaId) => {
-    await axios.delete(`/api/dataSiswa/${dataSiswaId}`);
-    getDataSiswa();
+  const deleteDataSurat = async (dataSuratId) => {
+    await axios.delete(`/api/dataSurat/${dataSuratId}`);
+    getDataSurat();
   };
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noreferrer");
@@ -26,7 +26,7 @@ const DataSiswaList = () => {
     <div>
       <h1 className="title text-sky-700 ">Data Siswa</h1>
       <h2 className="subtitle">List of Data Siswa</h2>
-      <Link to="/dataSiswa/add" className="button is-primary mb-2">
+      <Link to="/dataSurat/add" className="button is-primary mb-2">
         Tambah
       </Link>
       <table className="table is-striped is-fullwidth">
@@ -40,27 +40,27 @@ const DataSiswaList = () => {
           </tr>
         </thead>
         <tbody>
-          {dataSiswa.map((dataSiswa, index) => (
-            <tr key={dataSiswa.uuid}>
+          {dataSurat.map((dataSurat, index) => (
+            <tr key={dataSurat.uuid}>
               <td>{index + 1}</td>
-              <td>{dataSiswa.name}</td>
+              <td>{dataSurat.name}</td>
               <td><button
                     role="link"
-                    onClick={() => openInNewTab(dataSiswa.link)}
+                    onClick={() => openInNewTab(dataSurat.link)}
                     className="button is-small is-link"
                   >
                     Buka
                   </button></td>
-              <td>{dataSiswa.user.name}</td>
+              <td>{dataSurat.user.name}</td>
               <td>
                 <Link
-                  to={`/products/edit/${dataSiswa.uuid}`}
+                  to={`/products/edit/${dataSurat.uuid}`}
                   className="button is-small is-info"
                 >
                   Edit
                 </Link>
                 <button
-                  onClick={() => deleteDataSiswa(dataSiswa.uuid)}
+                  onClick={() => deleteDataSurat(dataSurat.uuid)}
                   className="button is-small is-danger"
                 >
                   Hapus
@@ -74,4 +74,4 @@ const DataSiswaList = () => {
   );
 };
 
-export default DataSiswaList;
+export default DataSuratList;

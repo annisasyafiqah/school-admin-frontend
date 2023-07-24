@@ -2,20 +2,22 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const FormAddDataSiswa = () => {
+const FormAddDataWalas = () => {
   const [name, setName] = useState("");
-  const [link, setLink] = useState("");
+  const [kelas, setKelas] = useState("");
+  const [kontak, setKontak] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
 
-  const saveDataSiswa = async (e) => {
+  const saveDataWalas = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/dataSiswa", {
+      await axios.post("/api/dataWalas", {
         name: name,
-        link: link,
+        kelas: kelas,
+        kontak: kontak,
       });
-      navigate("/dataSiswa");
+      navigate("/dataWalas");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -25,15 +27,15 @@ const FormAddDataSiswa = () => {
 
   return (
     <div>
-      <h1 className="title">Data Siswa</h1>
-      <h2 className="subtitle">Tambah Data Siswa</h2>
+      <h1 className="title">Data Walas</h1>
+      <h2 className="subtitle">Tambah Data Wali Kelas</h2>
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
-            <form onSubmit={saveDataSiswa}>
+            <form onSubmit={saveDataWalas}>
               <p className="has-text-centered">{msg}</p>
               <div className="field">
-                <label className="label">Nama File</label>
+                <label className="label">Nama Guru</label>
                 <div className="control">
                   <input
                     type="text"
@@ -45,15 +47,34 @@ const FormAddDataSiswa = () => {
                 </div>
               </div>
               <div className="field">
-                <label className="label">Link</label>
+                <label className="label">E-mail</label>
                 <div className="control">
                   <input
                     type="text"
                     className="input"
-                    value={link}
-                    onChange={(e) => setLink(e.target.value)}
+                    value={kelas}
+                    onChange={(e) => setKelas(e.target.value)}
                     placeholder="Link"
                   />
+                </div>
+              </div>
+              <div className="field">
+                <label className="label">kontak</label>
+                <div className="control">
+                  <label className="radio">
+                    <input 
+                    type="radio"
+                    value="Laki-laki"
+                    onChange={(e) => setKontak(e.target.value)}/>
+                    Laki-laki
+                  </label>
+                  <label class="radio">
+                  <input 
+                    type="radio"
+                    value="Perempuan"
+                    onChange={(e) => setKontak(e.target.value)}/>
+                    Perempuan
+                  </label>
                 </div>
               </div>
 
@@ -72,4 +93,4 @@ const FormAddDataSiswa = () => {
   );
 };
 
-export default FormAddDataSiswa;
+export default FormAddDataWalas;

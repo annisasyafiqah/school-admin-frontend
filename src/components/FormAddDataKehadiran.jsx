@@ -1,39 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const FormEditDataSiswa = () => {
+const FormAddDataKehadiran = () => {
   const [name, setName] = useState("");
   const [link, setLink] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
-  const { id } = useParams();
 
-  useEffect(() => {
-    const getDataSiswaById = async () => {
-      try {
-        const response = await axios.get(
-          `/api/dataSiswa/${id}`
-        );
-        setName(response.data.name);
-        setLink(response.data.link);
-      } catch (error) {
-        if (error.response) {
-          setMsg(error.response.data.msg);
-        }
-      }
-    };
-    getDataSiswaById();
-  }, [id]);
-
-  const updateDataSiswa = async (e) => {
+  const saveDataKehadiran = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`/api/dataSiswa/${id}`, {
+      await axios.post("/api/dataKehadiran", {
         name: name,
         link: link,
       });
-      navigate("/dataSiswa");
+      navigate("/dataKehadiran");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -43,22 +25,22 @@ const FormEditDataSiswa = () => {
 
   return (
     <div>
-      <h1 className="title">Data Siswa</h1>
-      <h2 className="subtitle">Edit Data Siswa</h2>
+      <h1 className="title">Data Kehadiran</h1>
+      <h2 className="subtitle">Tambah Data Kehadiran</h2>
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
-            <form onSubmit={updateDataSiswa}>
+            <form onSubmit={saveDataKehadiran}>
               <p className="has-text-centered">{msg}</p>
               <div className="field">
-                <label className="label">Nama</label>
+                <label className="label">Nama File</label>
                 <div className="control">
                   <input
                     type="text"
                     className="input"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Product Name"
+                    placeholder="Nama File"
                   />
                 </div>
               </div>
@@ -78,7 +60,7 @@ const FormEditDataSiswa = () => {
               <div className="field">
                 <div className="control">
                   <button type="submit" className="button is-success">
-                    Update
+                    Save
                   </button>
                 </div>
               </div>
@@ -90,4 +72,4 @@ const FormEditDataSiswa = () => {
   );
 };
 
-export default FormEditDataSiswa;
+export default FormAddDataKehadiran;

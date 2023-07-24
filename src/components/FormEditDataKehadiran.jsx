@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
-const FormEditDataSiswa = () => {
+const FormEditDataKehadiran = () => {
   const [name, setName] = useState("");
   const [link, setLink] = useState("");
   const [msg, setMsg] = useState("");
@@ -10,10 +10,10 @@ const FormEditDataSiswa = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const getDataSiswaById = async () => {
+    const getDataKehadiranById = async () => {
       try {
         const response = await axios.get(
-          `/api/dataSiswa/${id}`
+          `/api/dataKehadiran/${id}`
         );
         setName(response.data.name);
         setLink(response.data.link);
@@ -23,17 +23,17 @@ const FormEditDataSiswa = () => {
         }
       }
     };
-    getDataSiswaById();
+    getDataKehadiranById();
   }, [id]);
 
-  const updateDataSiswa = async (e) => {
+  const updateDataKehadiran = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`/api/dataSiswa/${id}`, {
+      await axios.patch(`/api/dataKehadiran/${id}`, {
         name: name,
         link: link,
       });
-      navigate("/dataSiswa");
+      navigate("/dataKehadiran");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -43,12 +43,12 @@ const FormEditDataSiswa = () => {
 
   return (
     <div>
-      <h1 className="title">Data Siswa</h1>
-      <h2 className="subtitle">Edit Data Siswa</h2>
+      <h1 className="title">Data Kehadiran</h1>
+      <h2 className="subtitle">Edit Data Kehadiran</h2>
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
-            <form onSubmit={updateDataSiswa}>
+            <form onSubmit={updateDataKehadiran}>
               <p className="has-text-centered">{msg}</p>
               <div className="field">
                 <label className="label">Nama</label>
@@ -90,4 +90,4 @@ const FormEditDataSiswa = () => {
   );
 };
 
-export default FormEditDataSiswa;
+export default FormEditDataKehadiran;

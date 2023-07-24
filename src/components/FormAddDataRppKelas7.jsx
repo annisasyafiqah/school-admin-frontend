@@ -2,20 +2,24 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const FormAddDataSiswa = () => {
+const FormAddRppKelas7 = () => {
   const [name, setName] = useState("");
+  const [mapel, setMapel] = useState("");
+  const [semester, setSemester] = useState("");
   const [link, setLink] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
 
-  const saveDataSiswa = async (e) => {
+  const saveRppKelas7 = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/dataSiswa", {
+      await axios.post("/api/rppKelas7", {
         name: name,
-        link: link,
+        mapel: mapel,
+        semester: semester,
+        link: link
       });
-      navigate("/dataSiswa");
+      navigate("/rppKelas7");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -30,7 +34,7 @@ const FormAddDataSiswa = () => {
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
-            <form onSubmit={saveDataSiswa}>
+            <form onSubmit={saveRppKelas7}>
               <p className="has-text-centered">{msg}</p>
               <div className="field">
                 <label className="label">Nama File</label>
@@ -42,6 +46,37 @@ const FormAddDataSiswa = () => {
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Nama File"
                   />
+                </div>
+              </div>
+              <div className="field">
+                <label className="label">Mata Pelajaran</label>
+                <div className="control">
+                  <input
+                    type="text"
+                    className="input"
+                    value={name}
+                    onChange={(e) => setMapel(e.target.value)}
+                    placeholder="Mata Pelajaran"
+                  />
+                </div>
+              </div>
+              <div className="field">
+                <label className="label">Semester</label>
+                <div className="control">
+                  <div class="select">
+                    <select>
+                      <option
+                      value="Ganjil"
+                      onChange={(e) => setSemester(e.target.value)}>
+                      Ganjil
+                      </option>
+                      <option
+                      value="Genap"
+                      onChange={(e) => setSemester(e.target.value)}>
+                      Genap
+                      </option>
+                    </select>
+                  </div>
                 </div>
               </div>
               <div className="field">
@@ -72,4 +107,4 @@ const FormAddDataSiswa = () => {
   );
 };
 
-export default FormAddDataSiswa;
+export default FormAddRppKelas7;

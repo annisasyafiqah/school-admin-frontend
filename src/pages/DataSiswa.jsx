@@ -3,7 +3,7 @@ import Layout from "./Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
-import DataSiswaList from "../components/DataSiswalist";
+import DataSiswaList from "../components/DataSiswaList";
 
 const Products = () => {
   const dispatch = useDispatch();

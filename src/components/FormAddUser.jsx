@@ -30,15 +30,15 @@ const FormAddUser = () => {
   };
   return (
     <div>
-      <h1 className="title">Users</h1>
-      <h2 className="subtitle">Add New User</h2>
+      <h1 className="title">User</h1>
+      <h2 className="subtitle">Tambah User</h2>
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
             <form onSubmit={saveUser}>
               <p className="has-text-centered">{msg}</p>
               <div className="field">
-                <label className="label">Name</label>
+                <label className="label">Nama</label>
                 <div className="control">
                   <input
                     type="text"
@@ -74,7 +74,7 @@ const FormAddUser = () => {
                 </div>
               </div>
               <div className="field">
-                <label className="label">Confirm Password</label>
+                <label className="label">Konfirmasi Password</label>
                 <div className="control">
                   <input
                     type="password"

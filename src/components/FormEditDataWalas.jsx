@@ -2,38 +2,41 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
-const FormEditDataSiswa = () => {
+const FormEditDataWalas = () => {
   const [name, setName] = useState("");
-  const [link, setLink] = useState("");
+  const [kelas, setKelas] = useState("");
+  const [kontak, setKontak] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
-    const getDataSiswaById = async () => {
+    const getDataWalasById = async () => {
       try {
         const response = await axios.get(
-          `/api/dataSiswa/${id}`
+          `/api/dataWalas/${id}`
         );
         setName(response.data.name);
-        setLink(response.data.link);
+        setKelas(response.data.kelas);
+        setKontak(response.data.kontak);
       } catch (error) {
         if (error.response) {
           setMsg(error.response.data.msg);
         }
       }
     };
-    getDataSiswaById();
+    getDataWalasById();
   }, [id]);
 
-  const updateDataSiswa = async (e) => {
+  const updateDataWalas = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`/api/dataSiswa/${id}`, {
+      await axios.patch(`/api/dataWalas/${id}`, {
         name: name,
-        link: link,
+        kelas: kelas,
+        kontak: kontak,
       });
-      navigate("/dataSiswa");
+      navigate("/dataWalas");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -43,12 +46,12 @@ const FormEditDataSiswa = () => {
 
   return (
     <div>
-      <h1 className="title">Data Siswa</h1>
-      <h2 className="subtitle">Edit Data Siswa</h2>
+      <h1 className="title">Data Walas</h1>
+      <h2 className="subtitle">Edit Data Walas</h2>
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
-            <form onSubmit={updateDataSiswa}>
+            <form onSubmit={updateDataWalas}>
               <p className="has-text-centered">{msg}</p>
               <div className="field">
                 <label className="label">Nama</label>
@@ -58,18 +61,18 @@ const FormEditDataSiswa = () => {
                     className="input"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Product Name"
+                    placeholder="Nama Walas"
                   />
                 </div>
               </div>
               <div className="field">
-                <label className="label">Link</label>
+                <label className="label">kelas</label>
                 <div className="control">
                   <input
                     type="text"
                     className="input"
-                    value={link}
-                    onChange={(e) => setLink(e.target.value)}
+                    value={kelas}
+                    onChange={(e) => setKelas(e.target.value)}
                     placeholder="Link"
                   />
                 </div>
@@ -90,4 +93,4 @@ const FormEditDataSiswa = () => {
   );
 };
 
-export default FormEditDataSiswa;
+export default FormEditDataWalas;

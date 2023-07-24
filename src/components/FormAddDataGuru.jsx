@@ -28,14 +28,14 @@ const FormAddDataGuru = () => {
   return (
     <div>
       <h1 className="title">Data Guru</h1>
-      <h2 className="subtitle">Add New Data Guru</h2>
+      <h2 className="subtitle">Tambah Data Guru</h2>
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
             <form onSubmit={saveDataGuru}>
               <p className="has-text-centered">{msg}</p>
               <div className="field">
-                <label className="label">Nama File</label>
+                <label className="label">Nama Guru</label>
                 <div className="control">
                   <input
                     type="text"
@@ -59,12 +59,11 @@ const FormAddDataGuru = () => {
                 </div>
               </div>
               <div className="field">
-                <label className="label">gender</label>
+                <label className="label">Gender</label>
                 <div className="control">
                   <label className="radio">
                     <input 
                     type="radio"
-                    className="input"
                     value="Laki-laki"
                     onChange={(e) => setGender(e.target.value)}/>
                     Laki-laki
@@ -72,7 +71,6 @@ const FormAddDataGuru = () => {
                   <label class="radio">
                   <input 
                     type="radio"
-                    className="input"
                     value="Perempuan"
                     onChange={(e) => setGender(e.target.value)}/>
                     Perempuan

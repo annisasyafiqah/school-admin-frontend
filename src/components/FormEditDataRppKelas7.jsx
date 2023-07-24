@@ -2,20 +2,24 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
-const FormEditDataSiswa = () => {
+const FormEditRppKelas7 = () => {
   const [name, setName] = useState("");
+  const [mapel, setMapel] = useState("");
+  const [semester, setSemester] = useState("");
   const [link, setLink] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
-    const getDataSiswaById = async () => {
+    const getRppKelas7ById = async () => {
       try {
         const response = await axios.get(
-          `/api/dataSiswa/${id}`
+          `/api/rppKelas7/${id}`
         );
         setName(response.data.name);
+        setName(response.data.mapel);
+        setName(response.data.semester);
         setLink(response.data.link);
       } catch (error) {
         if (error.response) {
@@ -23,17 +27,19 @@ const FormEditDataSiswa = () => {
         }
       }
     };
-    getDataSiswaById();
+    getRppKelas7ById();
   }, [id]);
 
-  const updateDataSiswa = async (e) => {
+  const updateRppKelas7 = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`/api/dataSiswa/${id}`, {
+      await axios.patch(`/api/rppKelas7/${id}`, {
         name: name,
-        link: link,
+        mapel: mapel,
+        semester: semester,
+        link: link
       });
-      navigate("/dataSiswa");
+      navigate("/rppKelas7");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -48,18 +54,49 @@ const FormEditDataSiswa = () => {
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
-            <form onSubmit={updateDataSiswa}>
-              <p className="has-text-centered">{msg}</p>
+            <form onSubmit={updateRppKelas7}>
+            <p className="has-text-centered">{msg}</p>
               <div className="field">
-                <label className="label">Nama</label>
+                <label className="label">Nama File</label>
                 <div className="control">
                   <input
                     type="text"
                     className="input"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Product Name"
+                    placeholder="Nama File"
                   />
+                </div>
+              </div>
+              <div className="field">
+                <label className="label">Mata Pelajaran</label>
+                <div className="control">
+                  <input
+                    type="text"
+                    className="input"
+                    value={name}
+                    onChange={(e) => setMapel(e.target.value)}
+                    placeholder="Mata Pelajaran"
+                  />
+                </div>
+              </div>
+              <div className="field">
+                <label className="label">Semester</label>
+                <div className="control">
+                  <div class="select">
+                    <select>
+                      <option
+                      value="Ganjil"
+                      onChange={(e) => setSemester(e.target.value)}>
+                      Ganjil
+                      </option>
+                      <option
+                      value="Genap"
+                      onChange={(e) => setSemester(e.target.value)}>
+                      Genap
+                      </option>
+                    </select>
+                  </div>
                 </div>
               </div>
               <div className="field">
@@ -90,4 +127,4 @@ const FormEditDataSiswa = () => {
   );
 };
 
-export default FormEditDataSiswa;
+export default FormEditRppKelas7;

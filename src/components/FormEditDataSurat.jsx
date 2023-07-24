@@ -1,21 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-const FormAddProduct = () => {
+const FormEditDataSurat = () => {
   const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
+  const [link, setLink] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
+  const { id } = useParams();
 
-  const saveProduct = async (e) => {
+  useEffect(() => {
+    const getDataSuratById = async () => {
+      try {
+        const response = await axios.get(
+          `/api/dataSurat/${id}`
+        );
+        setName(response.data.name);
+        setLink(response.data.link);
+      } catch (error) {
+        if (error.response) {
+          setMsg(error.response.data.msg);
+        }
+      }
+    };
+    getDataSuratById();
+  }, [id]);
+
+  const updateDataSurat = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/products", {
+      await axios.patch(`/api/dataSurat/${id}`, {
         name: name,
-        price: price,
+        link: link,
       });
-      navigate("/products");
+      navigate("/dataSurat");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -25,15 +43,15 @@ const FormAddProduct = () => {
 
   return (
     <div>
-      <h1 className="title">Products</h1>
-      <h2 className="subtitle">Add New Product</h2>
+      <h1 className="title">Data Surat</h1>
+      <h2 className="subtitle">Edit Data Surat</h2>
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
-            <form onSubmit={saveProduct}>
+            <form onSubmit={updateDataSurat}>
               <p className="has-text-centered">{msg}</p>
               <div className="field">
-                <label className="label">Name</label>
+                <label className="label">Nama</label>
                 <div className="control">
                   <input
                     type="text"
@@ -45,14 +63,14 @@ const FormAddProduct = () => {
                 </div>
               </div>
               <div className="field">
-                <label className="label">Price</label>
+                <label className="label">Link</label>
                 <div className="control">
                   <input
                     type="text"
                     className="input"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
-                    placeholder="Price"
+                    value={link}
+                    onChange={(e) => setLink(e.target.value)}
+                    placeholder="Link"
                   />
                 </div>
               </div>
@@ -60,7 +78,7 @@ const FormAddProduct = () => {
               <div className="field">
                 <div className="control">
                   <button type="submit" className="button is-success">
-                    Save
+                    Update
                   </button>
                 </div>
               </div>
@@ -72,4 +90,4 @@ const FormAddProduct = () => {
   );
 };
 
-export default FormAddProduct;
+export default FormEditDataSurat;

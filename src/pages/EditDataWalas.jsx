@@ -3,9 +3,9 @@ import Layout from "./Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
-import FormAddDataGuru from "../components/FormAddDataGuru";
+import FormEditDataWalas from "../components/FormEditDataWalas";
 
-const AddGuru = () => {
+const EditProduct = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -21,9 +21,9 @@ const AddGuru = () => {
   }, [isError, navigate]);
   return (
     <Layout>
-      <FormAddDataGuru />
+      <FormEditDataWalas />
     </Layout>
   );
 };
 
-export default AddGuru;
+export default EditProduct;

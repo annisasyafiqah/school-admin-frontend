@@ -24,7 +24,7 @@ const DataGuruList = () => {
       <h1 className="title text-sky-700 ">Data Guru</h1>
       <h2 className="subtitle">List of Data Guru</h2>
       <Link to="/dataGuru/add" className="button is-primary mb-2">
-        Add New
+        Tambah
       </Link>
       <table className="table is-striped is-fullwidth">
         <thead>
@@ -56,7 +56,7 @@ const DataGuruList = () => {
                   onClick={() => deleteDataGuru(dataGuru.uuid)}
                   className="button is-small is-danger"
                 >
-                  Delete
+                  Hapus
                 </button>
               </td>
             </tr>
