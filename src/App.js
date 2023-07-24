@@ -10,6 +10,9 @@ import EditProduct from "./pages/EditProduct";
 import DataSiswa from "./pages/DataSiswa";
 import AddDataSiswa from "./pages/AddDataSiswa";
 import EditDataSiswa from "./pages/EditDataSiswa";
+import DataGuru from "./pages/DataGuru";
+import AddDataGuru from "./pages/AddDataGuru";
+import EditDataGuru from "./pages/EditDataSiswa";
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
           <Route path="/dataSiswa" element={<DataSiswa />} />
           <Route path="/dataSiswa/add" element={<AddDataSiswa />} />
           <Route path="/dataSiswa/edit/:id" element={<EditDataSiswa />} />
+          <Route path="/dataSiswa" element={<DataGuru />} />
+          <Route path="/dataSiswa/add" element={<AddDataGuru />} />
+          <Route path="/dataSiswa/edit/:id" element={<EditDataGuru />} />
         </Routes>
       </BrowserRouter>
     </div>

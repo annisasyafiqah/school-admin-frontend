@@ -3,9 +3,9 @@ import Layout from "./Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
-import GuruList from "../components/GuruList";
+import FormAddDataGuru from "../components/FormAddDataGuru";
 
-const Guru = () => {
+const AddProduct = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -21,9 +21,9 @@ const Guru = () => {
   }, [isError, navigate]);
   return (
     <Layout>
-      <GuruList />
+      <FormAddDataGuru />
     </Layout>
   );
 };
 
-export default Guru;
+export default AddProduct;

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { IoPerson, IoPricetag, IoHome, IoLogOut } from "react-icons/io5";
+import { IoPerson, IoPricetag, IoHome, IoLogOut, IoDocuments, IoList, IoApps, IoArchive } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { LogOut, reset } from "../features/authSlice";
 
@@ -27,40 +27,40 @@ const Sidebar = () => {
           </li>
           <li>
             <NavLink to={"/dataSiswa"}>
-              <IoPricetag /> Data Siswa
+              <IoPerson /> Data Siswa
             </NavLink>
           </li>
           <li>
             <NavLink to={"/dataGuru"}>
-              <IoPricetag /> Data Guru
+              <IoPerson /> Data Guru
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/dataGuru"}>
-              <IoPricetag /> Data Walas
+            <NavLink to={"#"}>
+              <IoPerson /> Data Walas
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/dataGuru"}>
-              <IoPricetag /> Surat-surat
+            <NavLink to={"#"}>
+              <IoDocuments /> Surat-surat
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/dataGuru"}>
-              <IoPricetag /> Kehadiran
+            <NavLink to={"#"}>
+              <IoList /> Kehadiran
             </NavLink>
           </li>
         </ul>
         <p className="menu-label">Kurikulum</p>
         <ul className="menu-list text-sky-700">
           <li>
-            <NavLink to={"/dashboard"}>
-              <IoHome /> RPP
+            <NavLink to={"#"}>
+              <IoDocuments /> RPP
             </NavLink>
           </li>
           <li>
             <NavLink to={"/products"}>
-              <IoPricetag /> Silabus/CP
+              <IoApps /> Silabus/CP
             </NavLink>
           </li>
         </ul>
@@ -68,12 +68,12 @@ const Sidebar = () => {
         <ul className="menu-list text-sky-700">
           <li>
             <NavLink to={"/dashboard"}>
-              <IoHome /> SPP
+              <IoPricetag /> SPP
             </NavLink>
           </li>
           <li>
             <NavLink to={"/products"}>
-              <IoPricetag /> Perlengkapan
+              <IoArchive /> Perlengkapan
             </NavLink>
           </li>
         </ul>
