@@ -58,7 +58,7 @@ const FormEditDataKehadiran = () => {
                     className="input"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Product Name"
+                    placeholder="Nama File"
                   />
                 </div>
               </div>

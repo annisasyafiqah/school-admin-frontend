@@ -29,8 +29,8 @@ const FormAddRppKelas7 = () => {
 
   return (
     <div>
-      <h1 className="title">Data Siswa</h1>
-      <h2 className="subtitle">Tambah Data Siswa</h2>
+      <h1 className="title">Data RPP Kelas 7</h1>
+      <h2 className="subtitle">Tambah Data RPP Kelas 7</h2>
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">

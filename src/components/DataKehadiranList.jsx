@@ -24,8 +24,8 @@ const DataKehadiranList = () => {
 
   return (
     <div>
-      <h1 className="title text-sky-700 ">Data Siswa</h1>
-      <h2 className="subtitle">List of Data Siswa</h2>
+      <h1 className="title text-sky-700 ">Data Kehadiran</h1>
+      <h2 className="subtitle">File-file Data Kehadiran Siswa, Guru dan Pegawai</h2>
       <Link to="/dataKehadiran/add" className="button is-primary mb-2">
         Tambah
       </Link>
@@ -54,7 +54,7 @@ const DataKehadiranList = () => {
               <td>{dataKehadiran.user.name}</td>
               <td>
                 <Link
-                  to={`/products/edit/${dataKehadiran.uuid}`}
+                  to={`/dataKehadiran/edit/${dataKehadiran.uuid}`}
                   className="button is-small is-info"
                 >
                   Edit

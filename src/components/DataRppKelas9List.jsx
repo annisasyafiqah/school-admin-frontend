@@ -2,21 +2,21 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const DataSiswaList = () => {
-  const [dataSiswa, setDataSiswa] = useState([]);
+const RppKelas9List = () => {
+  const [rppKelas9, setRppKelas9] = useState([]);
 
   useEffect(() => {
-    getDataSiswa();
+    getRppKelas9();
   }, []);
 
-  const getDataSiswa = async () => {
-    const response = await axios.get("/api/dataSiswa");
-    setDataSiswa(response.data);
+  const getRppKelas9 = async () => {
+    const response = await axios.get("/api/rppKelas9");
+    setRppKelas9(response.data);
   };
 
-  const deleteDataSiswa = async (dataSiswaId) => {
-    await axios.delete(`/api/dataSiswa/${dataSiswaId}`);
-    getDataSiswa();
+  const deleteRppKelas9 = async (rppKelas9Id) => {
+    await axios.delete(`/api/rppKelas9/${rppKelas9Id}`);
+    getRppKelas9();
   };
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noreferrer");
@@ -24,9 +24,9 @@ const DataSiswaList = () => {
 
   return (
     <div>
-      <h1 className="title text-sky-700 ">Data Siswa</h1>
-      <h2 className="subtitle">List of Data Siswa</h2>
-      <Link to="/dataSiswa/add" className="button is-primary mb-2">
+      <h1 className="title text-sky-900 ">RPP Kelas 9</h1>
+      <h2 className="subtitle">Data Rencana Pencapaian Pembelajaran Kelas 9</h2>
+      <Link to="/rppKelas9/add" className="button is-primary mb-2">
         Tambah
       </Link>
       <table className="table is-striped is-fullwidth">
@@ -34,33 +34,35 @@ const DataSiswaList = () => {
           <tr>
             <th>No</th>
             <th>Nama</th>
+            <th>Mata Pelajaran</th>
+            <th>Semester</th>
             <th>Link</th>
             <th>Diupload Oleh</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          {dataSiswa.map((dataSiswa, index) => (
-            <tr key={dataSiswa.uuid}>
+          {rppKelas9.map((rppKelas9, index) => (
+            <tr key={rppKelas9.uuid}>
               <td>{index + 1}</td>
-              <td>{dataSiswa.name}</td>
+              <td>{rppKelas9.name}</td>
               <td><button
                     role="link"
-                    onClick={() => openInNewTab(dataSiswa.link)}
+                    onClick={() => openInNewTab(rppKelas9.link)}
                     className="button is-small is-link"
                   >
                     Buka
                   </button></td>
-              <td>{dataSiswa.user.name}</td>
+              <td>{rppKelas9.user.name}</td>
               <td>
                 <Link
-                  to={`/dataSiswa/edit/${dataSiswa.uuid}`}
+                  to={`/dataRppKelas9/edit/${rppKelas9.uuid}`}
                   className="button is-small is-info"
                 >
                   Edit
                 </Link>
                 <button
-                  onClick={() => deleteDataSiswa(dataSiswa.uuid)}
+                  onClick={() => deleteRppKelas9(rppKelas9.uuid)}
                   className="button is-small is-danger"
                 >
                   Hapus
@@ -74,4 +76,4 @@ const DataSiswaList = () => {
   );
 };
 
-export default DataSiswaList;
+export default RppKelas9List;

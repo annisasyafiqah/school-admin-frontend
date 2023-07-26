@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
-const FormEditRppKelas7 = () => {
+const FormEditRppKelas8 = () => {
   const [name, setName] = useState("");
   const [mapel, setMapel] = useState("");
   const [semester, setSemester] = useState("");
@@ -12,10 +12,10 @@ const FormEditRppKelas7 = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const getRppKelas7ById = async () => {
+    const getRppKelas8ById = async () => {
       try {
         const response = await axios.get(
-          `/api/rppKelas7/${id}`
+          `/api/rppKelas8/${id}`
         );
         setName(response.data.name);
         setName(response.data.mapel);
@@ -27,19 +27,19 @@ const FormEditRppKelas7 = () => {
         }
       }
     };
-    getRppKelas7ById();
+    getRppKelas8ById();
   }, [id]);
 
-  const updateRppKelas7 = async (e) => {
+  const updateRppKelas8 = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`/api/rppKelas7/${id}`, {
+      await axios.patch(`/api/rppKelas8/${id}`, {
         name: name,
         mapel: mapel,
         semester: semester,
         link: link
       });
-      navigate("/rppKelas7");
+      navigate("/rppKelas8");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -49,12 +49,12 @@ const FormEditRppKelas7 = () => {
 
   return (
     <div>
-      <h1 className="title">Data RPP Kelas 7</h1>
-      <h2 className="subtitle">Edit Data RPP Kelas 7</h2>
+      <h1 className="title">Data RPP Kelas 8</h1>
+      <h2 className="subtitle">Edit Data RPP Kelas 8</h2>
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
-            <form onSubmit={updateRppKelas7}>
+            <form onSubmit={updateRppKelas8}>
             <p className="has-text-centered">{msg}</p>
               <div className="field">
                 <label className="label">Nama File</label>
@@ -127,4 +127,4 @@ const FormEditRppKelas7 = () => {
   );
 };
 
-export default FormEditRppKelas7;
+export default FormEditRppKelas8;

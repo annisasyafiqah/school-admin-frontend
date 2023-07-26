@@ -47,7 +47,7 @@ const DataWalasList = () => {
               <td>{dataWalas.user.name}</td>
               <td>
                 <Link
-                  to={`/products/edit/${dataWalas.uuid}`}
+                  to={`/dataWalas/edit/${dataWalas.uuid}`}
                   className="button is-small is-info"
                 >
                   Edit

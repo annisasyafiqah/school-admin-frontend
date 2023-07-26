@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
 import FormAddDataRppKelas7 from "../components/FormAddDataRppKelas7";
 
-const AddRppKelas7 = () => {
+const AddDataRppKelas7 = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -26,4 +26,4 @@ const AddRppKelas7 = () => {
   );
 };
 
-export default AddRppKelas7;
+export default AddDataRppKelas7;

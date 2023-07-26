@@ -42,39 +42,32 @@ const FormAddDataWalas = () => {
                     className="input"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Nama File"
+                    placeholder="Nama Guru"
                   />
                 </div>
               </div>
               <div className="field">
-                <label className="label">E-mail</label>
+                <label className="label">Kelas</label>
                 <div className="control">
                   <input
                     type="text"
                     className="input"
                     value={kelas}
                     onChange={(e) => setKelas(e.target.value)}
-                    placeholder="Link"
+                    placeholder="Kelas"
                   />
                 </div>
               </div>
               <div className="field">
-                <label className="label">kontak</label>
+                <label className="label">Kontak</label>
                 <div className="control">
-                  <label className="radio">
-                    <input 
-                    type="radio"
-                    value="Laki-laki"
-                    onChange={(e) => setKontak(e.target.value)}/>
-                    Laki-laki
-                  </label>
-                  <label class="radio">
-                  <input 
-                    type="radio"
-                    value="Perempuan"
-                    onChange={(e) => setKontak(e.target.value)}/>
-                    Perempuan
-                  </label>
+                  <input
+                    type="text"
+                    className="input"
+                    value={kontak}
+                    onChange={(e) => setKontak(e.target.value)}
+                    placeholder="Kontak"
+                  />
                 </div>
               </div>
 

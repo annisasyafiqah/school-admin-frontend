@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
 import FormEditDataGuru from "../components/FormEditDataGuru";
 
-const EditProduct = () => {
+const EditDataGuru = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -26,4 +26,4 @@ const EditProduct = () => {
   );
 };
 
-export default EditProduct;
+export default EditDataGuru;

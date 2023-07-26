@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
 import FormAddDataWalas from "../components/FormAddDataWalas";
 
-const AddWalas = () => {
+const AddDataWalas = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -26,4 +26,4 @@ const AddWalas = () => {
   );
 };
 
-export default AddWalas;
+export default AddDataWalas;

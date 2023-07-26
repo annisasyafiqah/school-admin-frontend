@@ -24,8 +24,8 @@ const DataSuratList = () => {
 
   return (
     <div>
-      <h1 className="title text-sky-700 ">Data Siswa</h1>
-      <h2 className="subtitle">List of Data Siswa</h2>
+      <h1 className="title text-sky-700 ">Data Surat</h1>
+      <h2 className="subtitle">Daftar Surat-Surat</h2>
       <Link to="/dataSurat/add" className="button is-primary mb-2">
         Tambah
       </Link>
@@ -54,7 +54,7 @@ const DataSuratList = () => {
               <td>{dataSurat.user.name}</td>
               <td>
                 <Link
-                  to={`/products/edit/${dataSurat.uuid}`}
+                  to={`/dataSurat/edit/${dataSurat.uuid}`}
                   className="button is-small is-info"
                 >
                   Edit

@@ -58,7 +58,7 @@ const FormEditDataSurat = () => {
                     className="input"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Product Name"
+                    placeholder="Nama Surat"
                   />
                 </div>
               </div>

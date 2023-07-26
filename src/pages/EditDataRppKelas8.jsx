@@ -3,9 +3,9 @@ import Layout from "./Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
-import DataSiswaList from "../components/DataSiswaList";
+import FormEditRppKelas8 from "../components/FormEditDataRppKelas8";
 
-const DataSiswa = () => {
+const EditDataRppKelas8 = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -21,9 +21,9 @@ const DataSiswa = () => {
   }, [isError, navigate]);
   return (
     <Layout>
-      <DataSiswaList />
+      <FormEditRppKelas8 />
     </Layout>
   );
 };
 
-export default DataSiswa;
+export default EditDataRppKelas8;

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
 import DataSuratList from "../components/DataSuratList";
 
-const Products = () => {
+const DataSurat = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -26,4 +26,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default DataSurat;

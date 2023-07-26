@@ -57,17 +57,17 @@ const Sidebar = () => {
           <a> RPP </a>
           <ul>
             <li>
-              <NavLink to={"/rppKelas7"}>
+              <NavLink to={"/dataRppKelas7"}>
                 <IoDocuments /> RPP Kelas 7
               </NavLink>
             </li>
             <li>
-              <NavLink to={"#"}>
+              <NavLink to={"/dataRppKelas8"}>
                 <IoDocuments /> RPP Kelas 8
               </NavLink>
             </li>
             <li>
-              <NavLink to={"#"}>
+              <NavLink to={"/dataRppKelas9"}>
                 <IoDocuments /> RPP Kelas 9
               </NavLink>
             </li>
@@ -77,7 +77,7 @@ const Sidebar = () => {
             
           </li>
           <li>
-            <NavLink to={"/products"}>
+            <NavLink to={"#"}>
               <IoApps /> Silabus/CP
             </NavLink>
           </li>
@@ -90,7 +90,7 @@ const Sidebar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/products"}>
+            <NavLink to={"#"}>
               <IoArchive /> Perlengkapan
             </NavLink>
           </li>

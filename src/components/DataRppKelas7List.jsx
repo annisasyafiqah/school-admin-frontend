@@ -56,7 +56,7 @@ const RppKelas7List = () => {
               <td>{rppKelas7.user.name}</td>
               <td>
                 <Link
-                  to={`/products/edit/${rppKelas7.uuid}`}
+                  to={`/dataRppKelas7/edit/${rppKelas7.uuid}`}
                   className="button is-small is-info"
                 >
                   Edit

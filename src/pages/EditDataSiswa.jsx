@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
 import FormEditDataSiswa from "../components/FormEditDataSiswa";
 
-const EditProduct = () => {
+const EditDataSiswa = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -26,4 +26,4 @@ const EditProduct = () => {
   );
 };
 
-export default EditProduct;
+export default EditDataSiswa;

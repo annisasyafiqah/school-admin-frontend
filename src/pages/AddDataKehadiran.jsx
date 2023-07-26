@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
 import FormAddDataKehadiran from "../components/FormAddDataKehadiran";
 
-const AddSiswa = () => {
+const AddDataKehadiran = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -26,4 +26,4 @@ const AddSiswa = () => {
   );
 };
 
-export default AddSiswa;
+export default AddDataKehadiran;

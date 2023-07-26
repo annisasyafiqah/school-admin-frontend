@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import Layout from "./Layout";
-import FormAddProduct from "../components/FormAddProduct";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
+import DataRppKelas8List from "../components/DataRppKelas8List";
 
-const AddProduct = () => {
+const DataRppKelas8 = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -21,9 +21,9 @@ const AddProduct = () => {
   }, [isError, navigate]);
   return (
     <Layout>
-      <FormAddProduct />
+      <DataRppKelas8List />
     </Layout>
   );
 };
 
-export default AddProduct;
+export default DataRppKelas8;

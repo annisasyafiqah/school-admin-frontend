@@ -47,7 +47,7 @@ const DataGuruList = () => {
               <td>{dataGuru.user.name}</td>
               <td>
                 <Link
-                  to={`/products/edit/${dataGuru.uuid}`}
+                  to={`/dataGuru/edit/${dataGuru.uuid}`}
                   className="button is-small is-info"
                 >
                   Edit

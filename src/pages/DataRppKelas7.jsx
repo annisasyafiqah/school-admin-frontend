@@ -3,9 +3,9 @@ import Layout from "./Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
-import DataRppKelas7List from "../components/DataSiswaList";
+import DataRppKelas7List from "../components/DataRppKelas7List";
 
-const Products = () => {
+const DataRppKelas7 = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -26,4 +26,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default DataRppKelas7;
