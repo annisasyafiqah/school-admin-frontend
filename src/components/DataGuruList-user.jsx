@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
-const DataGuruList = () => {
+const DataGuruListUser = () => {
   const [dataGuru, setDataGuru] = useState([]);
 
   useEffect(() => {
@@ -14,18 +13,10 @@ const DataGuruList = () => {
     setDataGuru(response.data);
   };
 
-  const deleteDataGuru = async (dataGuruId) => {
-    await axios.delete(`/api/dataGuru/${dataGuruId}`);
-    getDataGuru();
-  };
-
   return (
     <div>
       <h1 className="title text-sky-700 ">Data Guru</h1>
       <h2 className="subtitle">List Data Guru</h2>
-      <Link to="/dataGuru/add" className="button is-primary mb-2">
-        Tambah
-      </Link>
       <table className="table is-striped is-fullwidth">
         <thead>
           <tr>
@@ -33,8 +24,6 @@ const DataGuruList = () => {
             <th>Nama</th>
             <th>Email</th>
             <th>Gender</th>
-            <th>Diupload Oleh</th>
-            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -44,21 +33,6 @@ const DataGuruList = () => {
               <td>{dataGuru.name}</td>
               <td>{dataGuru.email}</td>
               <td>{dataGuru.gender}</td>
-              <td>{dataGuru.user.name}</td>
-              <td>
-                <Link
-                  to={`/dataGuru/edit/${dataGuru.uuid}`}
-                  className="button is-small is-info"
-                >
-                  Edit
-                </Link>
-                <button
-                  onClick={() => deleteDataGuru(dataGuru.uuid)}
-                  className="button is-small is-danger"
-                >
-                  Hapus
-                </button>
-              </td>
             </tr>
           ))}
         </tbody>
@@ -67,4 +41,4 @@ const DataGuruList = () => {
   );
 };
 
-export default DataGuruList;
+export default DataGuruListUser;

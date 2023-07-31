@@ -2,21 +2,21 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const RppKelas7List = () => {
-  const [rppKelas7, setRppKelas7] = useState([]);
+const SilabusKelas9List = () => {
+  const [silabusKelas9, setSilabusKelas9] = useState([]);
 
   useEffect(() => {
-    getRppKelas7();
+    getSilabusKelas9();
   }, []);
 
-  const getRppKelas7 = async () => {
-    const response = await axios.get("/api/rppKelas7");
-    setRppKelas7(response.data);
+  const getSilabusKelas9 = async () => {
+    const response = await axios.get("/api/silabusKelas9");
+    setSilabusKelas9(response.data);
   };
 
-  const deleteRppKelas7 = async (rppKelas7Id) => {
-    await axios.delete(`/api/rppKelas7/${rppKelas7Id}`);
-    getRppKelas7();
+  const deleteSilabusKelas9 = async (silabusKelas9Id) => {
+    await axios.delete(`/api/silabusKelas9/${silabusKelas9Id}`);
+    getSilabusKelas9();
   };
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noreferrer");
@@ -24,9 +24,9 @@ const RppKelas7List = () => {
 
   return (
     <div>
-      <h1 className="title text-sky-700 ">Perangkat Kelas 7</h1>
-      <h2 className="subtitle">Data Perangkat Kelas 7</h2>
-      <Link to="/dataRppKelas7/add" className="button is-primary mb-2">
+      <h1 className="title text-sky-900 ">Silabus Kelas 9 Kelas 9</h1>
+      <h2 className="subtitle">Data Silabus/CP Kelas 9</h2>
+      <Link to="/dataSilabusKelas9/add" className="button is-primary mb-2">
         Tambah
       </Link>
       <table className="table is-striped is-fullwidth">
@@ -42,27 +42,27 @@ const RppKelas7List = () => {
           </tr>
         </thead>
         <tbody>
-          {rppKelas7.map((rppKelas7, index) => (
-            <tr key={rppKelas7.uuid}>
+          {silabusKelas9.map((silabusKelas9, index) => (
+            <tr key={silabusKelas9.uuid}>
               <td>{index + 1}</td>
-              <td>{rppKelas7.name}</td>
+              <td>{silabusKelas9.name}</td>
               <td><button
                     role="link"
-                    onClick={() => openInNewTab(rppKelas7.link)}
+                    onClick={() => openInNewTab(silabusKelas9.link)}
                     className="button is-small is-link"
                   >
                     Buka
                   </button></td>
-              <td>{rppKelas7.user.name}</td>
+              <td>{silabusKelas9.user.name}</td>
               <td>
                 <Link
-                  to={`/dataRppKelas7/edit/${rppKelas7.uuid}`}
+                  to={`/dataSilabusKelas9/edit/${silabusKelas9.uuid}`}
                   className="button is-small is-info"
                 >
                   Edit
                 </Link>
                 <button
-                  onClick={() => deleteRppKelas7(rppKelas7.uuid)}
+                  onClick={() => deleteSilabusKelas9(silabusKelas9.uuid)}
                   className="button is-small is-danger"
                 >
                   Hapus
@@ -76,4 +76,4 @@ const RppKelas7List = () => {
   );
 };
 
-export default RppKelas7List;
+export default SilabusKelas9List;

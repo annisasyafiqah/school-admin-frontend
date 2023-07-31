@@ -14,6 +14,12 @@ const Navbar = () => {
     dispatch(reset());
     navigate("/");
   };
+  
+  const login = () => {
+    dispatch(LogOut());
+    dispatch(reset());
+    navigate("/login");
+  };
 
   return (
     <div>
@@ -27,15 +33,8 @@ const Navbar = () => {
             <img src={logo} width="30" height="28" alt="logo" />
             <p className="pl-2" > SMPN1 Atambua</p>
           </NavLink>
-
-          <a
-            href="!#"
-            role="button"
-            className="navbar-burger burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-          >
+ 
+          <a role="button" className="navbar-burger burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -44,13 +43,22 @@ const Navbar = () => {
 
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="buttons">
-                <button onClick={logout} className="button is-light">
-                  Log out
-                </button>
+            {user && user.role === "admin" && (
+              <div className="navbar-item">
+                <div className="buttons">
+                  <button onClick={logout} className="button is-light">
+                    Log out
+                  </button>
+                </div>
               </div>
-            </div>
+            )}
+              <div className="navbar-item">
+                <div className="buttons">
+                  <button onClick={login} className="button is-light">
+                    Log In
+                  </button>
+                </div>
+              </div>
           </div>
         </div>
       </nav>

@@ -32,9 +32,7 @@ const Login = () => {
             <div className="column is-4">
               <form onSubmit={Auth} className="box">
                 <div class="container is-widescreen">
-                  <div class="notification is-primary">
                     {isError && <p className="has-text-centered">{message}</p>}
-                  </div>
                 </div>
                 <h1 className="title is-2">Masuk</h1>
                 <div className="field">

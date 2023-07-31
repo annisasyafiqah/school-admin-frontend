@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import Layout from "./Layout";
-import Userlist from "../components/Userlist";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
+import FormAddDataSoalKelas9 from "../components/FormAddDataSoalKelas9";
 
-const Users = () => {
+const AddDataSoalKelas9 = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isError, user } = useSelector((state) => state.auth);
+  const { isError } = useSelector((state) => state.auth);
 
   useEffect(() => {
     dispatch(getMe());
@@ -18,15 +18,12 @@ const Users = () => {
     if (isError) {
       navigate("/");
     }
-    if (user && user.role !== "admin") {
-      navigate("/");
-    }
-  }, [isError, user, navigate]);
+  }, [isError, navigate]);
   return (
     <Layout>
-      <Userlist />
+      <FormAddDataSoalKelas9 />
     </Layout>
   );
 };
 
-export default Users;
+export default AddDataSoalKelas9;

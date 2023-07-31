@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const RppKelas9List = () => {
+const RppKelas9ListUser = () => {
   const [rppKelas9, setRppKelas9] = useState([]);
 
   useEffect(() => {
@@ -13,11 +13,6 @@ const RppKelas9List = () => {
     const response = await axios.get("/api/rppKelas9");
     setRppKelas9(response.data);
   };
-
-  const deleteRppKelas9 = async (rppKelas9Id) => {
-    await axios.delete(`/api/rppKelas9/${rppKelas9Id}`);
-    getRppKelas9();
-  };
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noreferrer");
   };
@@ -26,9 +21,6 @@ const RppKelas9List = () => {
     <div>
       <h1 className="title text-sky-900 ">Perangkat Kelas 9</h1>
       <h2 className="subtitle">Data Perangkat Kelas 9</h2>
-      <Link to="/dataRppKelas9/add" className="button is-primary mb-2">
-        Tambah
-      </Link>
       <table className="table is-striped is-fullwidth">
         <thead>
           <tr>
@@ -37,8 +29,6 @@ const RppKelas9List = () => {
             <th>Mata Pelajaran</th>
             <th>Semester</th>
             <th>Link</th>
-            <th>Diupload Oleh</th>
-            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -53,21 +43,6 @@ const RppKelas9List = () => {
                   >
                     Buka
                   </button></td>
-              <td>{rppKelas9.user.name}</td>
-              <td>
-                <Link
-                  to={`/dataRppKelas9/edit/${rppKelas9.uuid}`}
-                  className="button is-small is-info"
-                >
-                  Edit
-                </Link>
-                <button
-                  onClick={() => deleteRppKelas9(rppKelas9.uuid)}
-                  className="button is-small is-danger"
-                >
-                  Hapus
-                </button>
-              </td>
             </tr>
           ))}
         </tbody>
@@ -76,4 +51,4 @@ const RppKelas9List = () => {
   );
 };
 
-export default RppKelas9List;
+export default RppKelas9ListUser;
