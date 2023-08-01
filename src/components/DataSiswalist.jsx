@@ -27,7 +27,7 @@ const DataSiswaList = () => {
       <h1 className="title text-sky-700 ">Data Siswa</h1>
       <h2 className="subtitle">List of Data Siswa</h2>
       <Link to="/dataSiswa/add" className="button is-primary mb-2">
-        Tambah
+        Tambah Data
       </Link>
       <table className="table is-striped is-fullwidth">
         <thead>
