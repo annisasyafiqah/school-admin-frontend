@@ -46,6 +46,8 @@ const RppKelas7List = () => {
             <tr key={rppKelas7.uuid}>
               <td>{index + 1}</td>
               <td>{rppKelas7.name}</td>
+              <td>{rppKelas7.mapel}</td>
+              <td>{rppKelas7.semester}</td>
               <td><button
                     role="link"
                     onClick={() => openInNewTab(rppKelas7.link)}

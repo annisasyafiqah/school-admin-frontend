@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { IoPerson, IoPricetag, IoHome, IoLogOut, IoDocuments, IoList, IoApps, IoArchive } from "react-icons/io5";
+import { IoPerson, IoHome, IoLogOut, IoDocuments, IoList } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { LogOut, reset } from "../features/authSlice";
 
@@ -18,7 +18,7 @@ const Sidebar = () => {
   return (
     <div>
       <aside className="menu pl-2 has-shadow">
-        {user && user.role === "admin" && (
+        {user && user.role === "admin" ? (
           <div>
             <p className="menu-label">General</p>
             <ul className="menu-list text-sky-700">
@@ -137,7 +137,7 @@ const Sidebar = () => {
               </li>
             </ul>
           </div>
-        )}
+        ) : (
           <div>
               <p className="menu-label">General</p>
               <ul className="menu-list text-sky-700">
@@ -239,6 +239,7 @@ const Sidebar = () => {
                 </li>
               </ul>
               </div>
+        )}
       </aside>
     </div>
   );

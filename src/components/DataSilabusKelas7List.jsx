@@ -46,6 +46,8 @@ const SilabusKelas7List = () => {
             <tr key={silabusKelas7.uuid}>
               <td>{index + 1}</td>
               <td>{silabusKelas7.name}</td>
+              <td>{silabusKelas7.mapel}</td>
+              <td>{silabusKelas7.semester}</td>
               <td><button
                     role="link"
                     onClick={() => openInNewTab(silabusKelas7.link)}

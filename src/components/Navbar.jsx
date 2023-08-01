@@ -43,7 +43,7 @@ const Navbar = () => {
 
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-end">
-            {user && user.role === "admin" && (
+            {user && user.role === "admin" ? (
               <div className="navbar-item">
                 <div className="buttons">
                   <button onClick={logout} className="button is-light">
@@ -51,7 +51,7 @@ const Navbar = () => {
                   </button>
                 </div>
               </div>
-            )}
+            ) : (
               <div className="navbar-item">
                 <div className="buttons">
                   <button onClick={login} className="button is-light">
@@ -59,6 +59,7 @@ const Navbar = () => {
                   </button>
                 </div>
               </div>
+            )}
           </div>
         </div>
       </nav>

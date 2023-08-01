@@ -19,7 +19,7 @@ const FormAddRppKelas8 = () => {
         semester: semester,
         link: link
       });
-      navigate("/rppKelas8");
+      navigate("/dataRppKelas8");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -29,8 +29,8 @@ const FormAddRppKelas8 = () => {
 
   return (
     <div>
-      <h1 className="title">Data RPP Kelas 8</h1>
-      <h2 className="subtitle">Tambah Data RPP Kelas 8</h2>
+      <h1 className="title">Data Perangkat Kelas 8</h1>
+      <h2 className="subtitle">Tambah Data Perangkat Kelas 8</h2>
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
@@ -54,7 +54,7 @@ const FormAddRppKelas8 = () => {
                   <input
                     type="text"
                     className="input"
-                    value={name}
+                    value={mapel}
                     onChange={(e) => setMapel(e.target.value)}
                     placeholder="Mata Pelajaran"
                   />
@@ -63,18 +63,13 @@ const FormAddRppKelas8 = () => {
               <div className="field">
                 <label className="label">Semester</label>
                 <div className="control">
-                  <div class="select">
-                    <select>
-                      <option
-                      value="Ganjil"
-                      onChange={(e) => setSemester(e.target.value)}>
-                      Ganjil
-                      </option>
-                      <option
-                      value="Genap"
-                      onChange={(e) => setSemester(e.target.value)}>
-                      Genap
-                      </option>
+                  <div className="select is-fullwidth">
+                    <select
+                      value={semester}
+                      onChange={(e) => setSemester(e.target.value)}
+                    >
+                      <option value="Ganjil">Ganjil</option>
+                      <option value="Genap">Genap</option>
                     </select>
                   </div>
                 </div>

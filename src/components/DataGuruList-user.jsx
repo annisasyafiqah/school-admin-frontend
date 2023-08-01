@@ -9,7 +9,7 @@ const DataGuruListUser = () => {
   }, []);
 
   const getDataGuru = async () => {
-    const response = await axios.get("/api/dataGuru");
+    const response = await axios.get("/api/dataGuruUser");
     setDataGuru(response.data);
   };
 
