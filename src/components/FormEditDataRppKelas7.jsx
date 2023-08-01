@@ -106,7 +106,6 @@ const FormEditRppKelas7 = () => {
                   />
                 </div>
               </div>
-
               <div className="field">
                 <div className="control">
                   <button type="submit" className="button is-success">
