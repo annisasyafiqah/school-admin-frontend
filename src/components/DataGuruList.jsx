@@ -33,7 +33,7 @@ const DataGuruList = () => {
             <th>Nama</th>
             <th>Email</th>
             <th>Gender</th>
-            <th>Diupload Oleh</th>
+            {/* <th>Diupload Oleh</th> */}
             <th>Actions</th>
           </tr>
         </thead>
@@ -44,7 +44,7 @@ const DataGuruList = () => {
               <td>{dataGuru.name}</td>
               <td>{dataGuru.email}</td>
               <td>{dataGuru.gender}</td>
-              <td>{dataGuru.user.name}</td>
+              {/* <td>{dataGuru.user.name}</td> */}
               <td>
                 <Link
                   to={`/dataGuru/edit/${dataGuru.uuid}`}

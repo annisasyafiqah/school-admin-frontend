@@ -37,7 +37,7 @@ const SilabusKelas7List = () => {
             <th>Mata Pelajaran</th>
             <th>Semester</th>
             <th>Link</th>
-            <th>Diupload Oleh</th>
+            {/* <th>Diupload Oleh</th> */}
             <th>Actions</th>
           </tr>
         </thead>
@@ -55,7 +55,7 @@ const SilabusKelas7List = () => {
                   >
                     Buka
                   </button></td>
-              <td>{silabusKelas7.user.name}</td>
+              {/* <td>{silabusKelas7.user.name}</td> */}
               <td>
                 <Link
                   to={`/dataSilabusKelas7/edit/${silabusKelas7.uuid}`}

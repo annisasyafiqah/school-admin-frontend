@@ -35,7 +35,7 @@ const DataSuratList = () => {
             <th>No</th>
             <th>Nama</th>
             <th>Link</th>
-            <th>Diupload Oleh</th>
+            {/* <th>Diupload Oleh</th> */}
             <th>Actions</th>
           </tr>
         </thead>
@@ -51,7 +51,7 @@ const DataSuratList = () => {
                   >
                     Buka
                   </button></td>
-              <td>{dataSurat.user.name}</td>
+              {/* <td>{dataSurat.user.name}</td> */}
               <td>
                 <Link
                   to={`/dataSurat/edit/${dataSurat.uuid}`}

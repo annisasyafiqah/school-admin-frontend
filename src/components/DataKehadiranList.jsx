@@ -35,7 +35,7 @@ const DataKehadiranList = () => {
             <th>No</th>
             <th>Nama</th>
             <th>Link</th>
-            <th>Diupload Oleh</th>
+            {/* <th>Diupload Oleh</th> */}
             <th>Actions</th>
           </tr>
         </thead>
@@ -51,7 +51,7 @@ const DataKehadiranList = () => {
                   >
                     Buka
                   </button></td>
-              <td>{dataKehadiran.user.name}</td>
+              {/* <td>{dataKehadiran.user.name}</td> */}
               <td>
                 <Link
                   to={`/dataKehadiran/edit/${dataKehadiran.uuid}`}

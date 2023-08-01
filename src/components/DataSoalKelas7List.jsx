@@ -37,7 +37,7 @@ const SoalKelas7List = () => {
             <th>Mata Pelajaran</th>
             <th>Semester</th>
             <th>Link</th>
-            <th>Diupload Oleh</th>
+            {/* <th>Diupload Oleh</th> */}
             <th>Actions</th>
           </tr>
         </thead>
@@ -55,7 +55,7 @@ const SoalKelas7List = () => {
                   >
                     Buka
                   </button></td>
-              <td>{soalKelas7.user.name}</td>
+              {/* <td>{soalKelas7.user.name}</td> */}
               <td>
                 <Link
                   to={`/dataSoalKelas7/edit/${soalKelas7.uuid}`}

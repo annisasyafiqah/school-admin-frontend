@@ -37,7 +37,7 @@ const SilabusKelas8List = () => {
             <th>Mata Pelajaran</th>
             <th>Semester</th>
             <th>Link</th>
-            <th>Diupload Oleh</th>
+            {/* <th>Diupload Oleh</th> */}
             <th>Actions</th>
           </tr>
         </thead>
@@ -55,7 +55,7 @@ const SilabusKelas8List = () => {
                   >
                     Buka
                   </button></td>
-              <td>{silabusKelas8.user.name}</td>
+              {/* <td>{silabusKelas8.user.name}</td> */}
               <td>
                 <Link
                   to={`/dataSilabusKelas8/edit/${silabusKelas8.uuid}`}

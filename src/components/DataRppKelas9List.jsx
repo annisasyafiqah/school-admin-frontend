@@ -37,7 +37,7 @@ const RppKelas9List = () => {
             <th>Mata Pelajaran</th>
             <th>Semester</th>
             <th>Link</th>
-            <th>Diupload Oleh</th>
+            {/* <th>Diupload Oleh</th> */}
             <th>Actions</th>
           </tr>
         </thead>
@@ -55,7 +55,7 @@ const RppKelas9List = () => {
                   >
                     Buka
                   </button></td>
-              <td>{rppKelas9.user.name}</td>
+              {/* <td>{rppKelas9.user.name}</td> */}
               <td>
                 <Link
                   to={`/dataRppKelas9/edit/${rppKelas9.uuid}`}

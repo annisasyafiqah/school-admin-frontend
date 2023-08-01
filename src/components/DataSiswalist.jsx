@@ -35,7 +35,7 @@ const DataSiswaList = () => {
             <th>No</th>
             <th>Nama</th>
             <th>Link</th>
-            <th>Diupload Oleh</th>
+            {/* <th>Diupload Oleh</th> */}
             <th>Actions</th>
           </tr>
         </thead>
@@ -51,7 +51,7 @@ const DataSiswaList = () => {
                   >
                     Buka
                   </button></td>
-              <td>{dataSiswa.user.name}</td>
+              {/* <td>{dataSiswa.user.name}</td> */}
               <td>
                 <Link
                   to={`/dataSiswa/edit/${dataSiswa.uuid}`}

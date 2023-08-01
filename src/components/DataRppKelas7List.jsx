@@ -33,11 +33,11 @@ const RppKelas7List = () => {
         <thead>
           <tr>
             <th>No</th>
-            <th>Nama</th>
+            {/* <th>Nama</th> */}
             <th>Mata Pelajaran</th>
             <th>Semester</th>
             <th>Link</th>
-            <th>Diupload Oleh</th>
+            {/* <th>Diupload Oleh</th> */}
             <th>Actions</th>
           </tr>
         </thead>
@@ -45,7 +45,7 @@ const RppKelas7List = () => {
           {rppKelas7.map((rppKelas7, index) => (
             <tr key={rppKelas7.uuid}>
               <td>{index + 1}</td>
-              <td>{rppKelas7.name}</td>
+              {/* <td>{rppKelas7.name}</td> */}
               <td>{rppKelas7.mapel}</td>
               <td>{rppKelas7.semester}</td>
               <td><button
@@ -55,7 +55,7 @@ const RppKelas7List = () => {
                   >
                     Buka
                   </button></td>
-              <td>{rppKelas7.user.name}</td>
+              {/* <td>{rppKelas7.user.name}</td> */}
               <td>
                 <Link
                   to={`/dataRppKelas7/edit/${rppKelas7.uuid}`}

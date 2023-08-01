@@ -33,7 +33,7 @@ const DataWalasList = () => {
             <th>Nama</th>
             <th>Kelas</th>
             <th>Kontak</th>
-            <th>Diupload Oleh</th>
+            {/* <th>Diupload Oleh</th> */}
             <th>Actions</th>
           </tr>
         </thead>
@@ -44,7 +44,7 @@ const DataWalasList = () => {
               <td>{dataWalas.name}</td>
               <td>{dataWalas.kelas}</td>
               <td>{dataWalas.kontak}</td>
-              <td>{dataWalas.user.name}</td>
+              {/* <td>{dataWalas.user.name}</td> */}
               <td>
                 <Link
                   to={`/dataWalas/edit/${dataWalas.uuid}`}
