@@ -10,7 +10,7 @@ const RppKelas8ListUser = () => {
   }, []);
 
   const getRppKelas8 = async () => {
-    const response = await axios.get("/api/rppKelas8");
+    const response = await axios.get("/api/rppKelas8User");
     setRppKelas8(response.data);
   };
 
@@ -26,7 +26,7 @@ const RppKelas8ListUser = () => {
         <thead>
           <tr>
             <th>No</th>
-            <th>Nama</th>
+            {/* <th>Nama</th> */}
             <th>Mata Pelajaran</th>
             <th>Semester</th>
             <th>Link</th>
@@ -36,7 +36,9 @@ const RppKelas8ListUser = () => {
           {rppKelas8.map((rppKelas8, index) => (
             <tr key={rppKelas8.uuid}>
               <td>{index + 1}</td>
-              <td>{rppKelas8.name}</td>
+              {/* <td>{rppKelas8.name}</td> */}
+              <td>{rppKelas8.mapel}</td>
+              <td>{rppKelas8.semester}</td>
               <td><button
                     role="link"
                     onClick={() => openInNewTab(rppKelas8.link)}

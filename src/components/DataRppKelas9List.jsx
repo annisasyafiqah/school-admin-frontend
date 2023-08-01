@@ -33,7 +33,7 @@ const RppKelas9List = () => {
         <thead>
           <tr>
             <th>No</th>
-            <th>Nama</th>
+            {/* <th>Nama</th> */}
             <th>Mata Pelajaran</th>
             <th>Semester</th>
             <th>Link</th>
@@ -45,7 +45,7 @@ const RppKelas9List = () => {
           {rppKelas9.map((rppKelas9, index) => (
             <tr key={rppKelas9.uuid}>
               <td>{index + 1}</td>
-              <td>{rppKelas9.name}</td>
+              {/* <td>{rppKelas9.name}</td> */}
               <td>{rppKelas9.mapel}</td>
               <td>{rppKelas9.semester}</td>
               <td><button

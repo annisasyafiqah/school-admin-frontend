@@ -33,7 +33,7 @@ const SoalKelas7List = () => {
         <thead>
           <tr>
             <th>No</th>
-            <th>Nama</th>
+            {/* <th>Nama</th> */}
             <th>Mata Pelajaran</th>
             <th>Semester</th>
             <th>Link</th>
@@ -45,7 +45,7 @@ const SoalKelas7List = () => {
           {soalKelas7.map((soalKelas7, index) => (
             <tr key={soalKelas7.uuid}>
               <td>{index + 1}</td>
-              <td>{soalKelas7.name}</td>
+              {/* <td>{soalKelas7.name}</td> */}
               <td>{soalKelas7.mapel}</td>
               <td>{soalKelas7.semester}</td>
               <td><button

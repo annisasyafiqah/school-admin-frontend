@@ -10,7 +10,7 @@ const SoalKelas7ListUser = () => {
   }, []);
 
   const getSoalKelas7 = async () => {
-    const response = await axios.get("/api/soalKelas7");
+    const response = await axios.get("/api/soalKelas7User");
     setSoalKelas7(response.data);
   };
 
@@ -26,7 +26,7 @@ const SoalKelas7ListUser = () => {
         <thead>
           <tr>
             <th>No</th>
-            <th>Nama</th>
+            {/* <th>Nama</th> */}
             <th>Mata Pelajaran</th>
             <th>Semester</th>
             <th>Link</th>
@@ -36,7 +36,9 @@ const SoalKelas7ListUser = () => {
           {soalKelas7.map((soalKelas7, index) => (
             <tr key={soalKelas7.uuid}>
               <td>{index + 1}</td>
-              <td>{soalKelas7.name}</td>
+              {/* <td>{soalKelas7.name}</td> */}
+              <td>{soalKelas7.mapel}</td>
+              <td>{soalKelas7.semester}</td>
               <td><button
                     role="link"
                     onClick={() => openInNewTab(soalKelas7.link)}

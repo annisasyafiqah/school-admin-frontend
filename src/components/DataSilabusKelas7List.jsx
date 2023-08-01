@@ -33,7 +33,7 @@ const SilabusKelas7List = () => {
         <thead>
           <tr>
             <th>No</th>
-            <th>Nama</th>
+            {/* <th>Nama</th> */}
             <th>Mata Pelajaran</th>
             <th>Semester</th>
             <th>Link</th>
@@ -45,7 +45,7 @@ const SilabusKelas7List = () => {
           {silabusKelas7.map((silabusKelas7, index) => (
             <tr key={silabusKelas7.uuid}>
               <td>{index + 1}</td>
-              <td>{silabusKelas7.name}</td>
+              {/* <td>{silabusKelas7.name}</td> */}
               <td>{silabusKelas7.mapel}</td>
               <td>{silabusKelas7.semester}</td>
               <td><button

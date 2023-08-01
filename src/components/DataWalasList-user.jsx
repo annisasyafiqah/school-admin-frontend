@@ -10,7 +10,7 @@ const DataWalasListUser = () => {
   }, []);
 
   const getDataWalas = async () => {
-    const response = await axios.get("/api/dataWalas");
+    const response = await axios.get("/api/dataWalasUser");
     setDataWalas(response.data);
   };
 

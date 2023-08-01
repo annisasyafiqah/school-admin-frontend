@@ -10,7 +10,7 @@ const RppKelas9ListUser = () => {
   }, []);
 
   const getRppKelas9 = async () => {
-    const response = await axios.get("/api/rppKelas9");
+    const response = await axios.get("/api/rppKelas9User");
     setRppKelas9(response.data);
   };
   const openInNewTab = (url) => {
@@ -25,7 +25,7 @@ const RppKelas9ListUser = () => {
         <thead>
           <tr>
             <th>No</th>
-            <th>Nama</th>
+            {/* <th>Nama</th> */}
             <th>Mata Pelajaran</th>
             <th>Semester</th>
             <th>Link</th>
@@ -35,7 +35,9 @@ const RppKelas9ListUser = () => {
           {rppKelas9.map((rppKelas9, index) => (
             <tr key={rppKelas9.uuid}>
               <td>{index + 1}</td>
-              <td>{rppKelas9.name}</td>
+              {/* <td>{rppKelas9.name}</td> */}
+              <td>{rppKelas9.mapel}</td>
+              <td>{rppKelas9.semester}</td>
               <td><button
                     role="link"
                     onClick={() => openInNewTab(rppKelas9.link)}

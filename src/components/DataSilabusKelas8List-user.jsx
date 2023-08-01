@@ -10,7 +10,7 @@ const SilabusKelas8ListUser = () => {
   }, []);
 
   const getSilabusKelas8 = async () => {
-    const response = await axios.get("/api/silabusKelas8");
+    const response = await axios.get("/api/silabusKelas8User");
     setSilabusKelas8(response.data);
   };
   const openInNewTab = (url) => {
@@ -25,7 +25,7 @@ const SilabusKelas8ListUser = () => {
         <thead>
           <tr>
             <th>No</th>
-            <th>Nama</th>
+            {/* <th>Nama</th> */}
             <th>Mata Pelajaran</th>
             <th>Semester</th>
             <th>Link</th>
@@ -35,7 +35,9 @@ const SilabusKelas8ListUser = () => {
           {silabusKelas8.map((silabusKelas8, index) => (
             <tr key={silabusKelas8.uuid}>
               <td>{index + 1}</td>
-              <td>{silabusKelas8.name}</td>
+              {/* <td>{silabusKelas8.name}</td> */}
+              <td>{silabusKelas8.mapel}</td>
+              <td>{silabusKelas8.semester}</td>
               <td><button
                     role="link"
                     onClick={() => openInNewTab(silabusKelas8.link)}

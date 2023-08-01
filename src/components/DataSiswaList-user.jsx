@@ -10,7 +10,7 @@ const DataSiswaListUser = () => {
   }, []);
 
   const getDataSiswa = async () => {
-    const response = await axios.get("/api/dataSiswa");
+    const response = await axios.get("/api/dataSiswaUser");
     setDataSiswa(response.data);
   };
   const openInNewTab = (url) => {

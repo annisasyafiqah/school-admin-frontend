@@ -10,7 +10,7 @@ const DataSuratListUser = () => {
   }, []);
 
   const getDataSurat = async () => {
-    const response = await axios.get("/api/dataSurat");
+    const response = await axios.get("/api/dataSuratUser");
     setDataSurat(response.data);
   };
 

@@ -10,7 +10,7 @@ const DataKehadiranListUser = () => {
   }, []);
 
   const getDataKehadiran = async () => {
-    const response = await axios.get("/api/dataKehadiran");
+    const response = await axios.get("/api/dataKehadiranUser");
     setDataKehadiran(response.data);
   };
   const openInNewTab = (url) => {
