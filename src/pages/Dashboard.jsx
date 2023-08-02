@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Layout from "./Layout";
-import SideCard from "../components/SideCard";
+import Welcome from "../components/Welcome";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
@@ -22,7 +22,7 @@ const Dashboard = () => {
 
   return (
     <Layout>
-      <SideCard />
+      <Welcome />
     </Layout>
   );
 };

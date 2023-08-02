@@ -1,11 +1,11 @@
 import Layout from "./Layout";
-import SideCard from "../components/SideCard";
+import Welcome from "../components/Welcome";
 
 const DashboardUser = () => {
 
   return (
     <Layout>
-      <SideCard />
+      <Welcome/>
     </Layout>
   );
 };
