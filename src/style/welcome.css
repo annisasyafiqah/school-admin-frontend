@@ -1,0 +1,24 @@
+/* Welcome.css */
+.title {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .hero {
+    background-color: #f0f0f0;
+    /* Add other styles as needed */
+  }
+  
+  .tile {
+    /* Add styles for tiles */
+  }
+  
+  /* You can add more CSS rules to style the component further */
+  

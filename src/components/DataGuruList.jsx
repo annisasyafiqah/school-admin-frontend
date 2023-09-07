@@ -32,7 +32,7 @@ const DataGuruList = () => {
             <th>No</th>
             <th>Nama</th>
             <th>Email</th>
-            <th>Gender</th>
+            <th>Tugas</th>
             {/* <th>Diupload Oleh</th> */}
             <th>Actions</th>
           </tr>
@@ -43,7 +43,7 @@ const DataGuruList = () => {
               <td>{index + 1}</td>
               <td>{dataGuru.name}</td>
               <td>{dataGuru.email}</td>
-              <td>{dataGuru.gender}</td>
+              <td>{dataGuru.tugas}</td>
               {/* <td>{dataGuru.user.name}</td> */}
               <td>
                 <Link

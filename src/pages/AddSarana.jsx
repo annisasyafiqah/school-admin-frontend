@@ -3,9 +3,9 @@ import Layout from "./Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
-import Pengumuman from "../components/Pengumuman";
+import FormAddSarana from "../components/FormAddSarana";
 
-const Dashboard = () => {
+const AddSarana = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -19,12 +19,11 @@ const Dashboard = () => {
       navigate("/");
     }
   }, [isError, navigate]);
-
   return (
     <Layout>
-      <Pengumuman />
+      <FormAddSarana />
     </Layout>
   );
 };
 
-export default Dashboard;
+export default AddSarana;

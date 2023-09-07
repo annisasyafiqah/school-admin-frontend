@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
 import Pengumuman from "../components/Pengumuman";
 
-const Dashboard = () => {
+const PengumumanList = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -19,7 +19,6 @@ const Dashboard = () => {
       navigate("/");
     }
   }, [isError, navigate]);
-
   return (
     <Layout>
       <Pengumuman />
@@ -27,4 +26,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default PengumumanList;

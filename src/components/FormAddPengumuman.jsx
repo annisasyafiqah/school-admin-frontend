@@ -2,22 +2,22 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const FormAddDataGuru = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [tugas, setTugas] = useState("");
+const FormAddPengumuman = () => {
+  const [judul, setJudul] = useState("");
+  const [tanggal, setTanggal] = useState("");
+  const [isi, setIsi] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
 
-  const saveDataGuru = async (e) => {
+  const savePengumuman = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/dataGuru", {
-        name: name,
-        email: email,
-        tugas: tugas,
+      await axios.post("/api/pengumuman", {
+        judul: judul,
+        tanggal: tanggal,
+        isi: isi,
       });
-      navigate("/dataGuru");
+      navigate("/pengumuman");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -27,49 +27,50 @@ const FormAddDataGuru = () => {
 
   return (
     <div>
-      <h1 className="title">Data Guru</h1>
-      <h2 className="subtitle">Tambah Data Guru</h2>
+      <h1 className="title">Pengumuman</h1>
+      <h2 className="subtitle">Tambah Pengumuman</h2>
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
-            <form onSubmit={saveDataGuru}>
+            <form onSubmit={savePengumuman}>
               <p className="has-text-centered">{msg}</p>
               <div className="field">
-                <label className="label">Nama Guru</label>
+                <label className="label">Judul</label>
                 <div className="control">
                   <input
                     type="text"
                     className="input"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Nama File"
+                    value={judul}
+                    onChange={(e) => setJudul(e.target.value)}
+                    placeholder="Judul"
                   />
                 </div>
               </div>
               <div className="field">
-                <label className="label">E-mail</label>
+                <label className="label">Tanggal</label>
                 <div className="control">
                   <input
-                    type="text"
-                    className="input"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Link"
+                    type="date"
+                    className="date"
+                    value={tanggal}
+                    onChange={(e) => setTanggal(e.target.value)}
+                    placeholder="Tanggal"
                   />
                 </div>
               </div>
               <div className="field">
-                <label className="label">Tugas</label>
+                <label className="label">Isi</label>
                 <div className="control">
                   <input
                     type="text"
                     className="input"
-                    value={tugas}
-                    onChange={(e) => setTugas(e.target.value)}
-                    placeholder="Link"
+                    value={isi}
+                    onChange={(e) => setIsi(e.target.value)}
+                    placeholder="Isi"
                   />
                 </div>
               </div>
+
               <div className="field">
                 <div className="control">
                   <button type="submit" className="button is-success">
@@ -85,4 +86,4 @@ const FormAddDataGuru = () => {
   );
 };
 
-export default FormAddDataGuru;
+export default FormAddPengumuman;

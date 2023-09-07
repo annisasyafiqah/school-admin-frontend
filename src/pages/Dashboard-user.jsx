@@ -1,11 +1,11 @@
 import Layout from "./Layout";
-import Welcome from "../components/Welcome";
+import PengumumanUser from "../components/PengumumanUser";
 
 const DashboardUser = () => {
 
   return (
     <Layout>
-      <Welcome/>
+      <PengumumanUser/>
     </Layout>
   );
 };

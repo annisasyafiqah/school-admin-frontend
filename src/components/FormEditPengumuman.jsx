@@ -2,41 +2,41 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
-const FormEditDataGuru = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [tugas, setTugas] = useState("");
+const FormEditPengumuman = () => {
+  const [judul, setJudul] = useState("");
+  const [tanggal, setTanggal] = useState("");
+  const [isi, setIsi] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
-    const getDataGuruById = async () => {
+    const getPengumumanById = async () => {
       try {
         const response = await axios.get(
-          `/api/dataGuru/${id}`
+          `/api/pengumuman/${id}`
         );
-        setName(response.data.name);
-        setEmail(response.data.email);
-        setTugas(response.data.tugas);
+        setJudul(response.data.judul);
+        setTanggal(response.data.tanggal);
+        setIsi(response.data.isi);
       } catch (error) {
         if (error.response) {
           setMsg(error.response.data.msg);
         }
       }
     };
-    getDataGuruById();
+    getPengumumanById();
   }, [id]);
 
-  const updateDataGuru = async (e) => {
+  const updatePengumuman = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`/api/dataGuru/${id}`, {
-        name: name,
-        email: email,
-        tugas: tugas,
+      await axios.patch(`/api/pengumuman/${id}`, {
+        name: judul,
+        email: tanggal,
+        gender: isi,
       });
-      navigate("/dataGuru");
+      navigate("/pengumuman");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -46,46 +46,46 @@ const FormEditDataGuru = () => {
 
   return (
     <div>
-      <h1 className="title">Data Guru</h1>
-      <h2 className="subtitle">Edit Data Guru</h2>
+      <h1 className="title">Pengumuman</h1>
+      <h2 className="subtitle">Edit Pengumuman</h2>
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
-            <form onSubmit={updateDataGuru}>
+            <form onSubmit={updatePengumuman}>
               <p className="has-text-centered">{msg}</p>
               <div className="field">
-                <label className="label">Nama</label>
+                <label className="label">Judul</label>
                 <div className="control">
                   <input
                     type="text"
                     className="input"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Nama Guru"
+                    value={judul}
+                    onChange={(e) => setJudul(e.target.value)}
+                    placeholder="Pengumuman Tentang"
                   />
                 </div>
               </div>
               <div className="field">
-                <label className="label">Email</label>
+                <label className="label">Tanggal</label>
                 <div className="control">
                   <input
                     type="text"
-                    className="input"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Link"
+                    className="date"
+                    value={tanggal}
+                    onChange={(e) => setTanggal(e.target.value)}
+                    placeholder="Tanggal"
                   />
                 </div>
               </div>
               <div className="field">
-                <label className="label">Tugas</label>
+                <label className="label">Isi</label>
                 <div className="control">
                   <input
                     type="text"
-                    className="input"
-                    value={tugas}
-                    onChange={(e) => setTugas(e.target.value)}
-                    placeholder="Link"
+                    className="date"
+                    value={isi}
+                    onChange={(e) => setIsi(e.target.value)}
+                    placeholder="Isi"
                   />
                 </div>
               </div>
@@ -105,4 +105,4 @@ const FormEditDataGuru = () => {
   );
 };
 
-export default FormEditDataGuru;
+export default FormEditPengumuman;

@@ -17,7 +17,7 @@ const DataWalasListUser = () => {
   return (
     <div>
       <h1 className="title text-sky-700 ">Data Walas</h1>
-      <h2 className="subtitle">List File Data Walas</h2>
+      <h2 className="subtitle">List Data Walas</h2>
       <table className="table is-striped is-fullwidth">
         <thead>
           <tr>

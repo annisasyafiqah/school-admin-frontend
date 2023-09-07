@@ -42,7 +42,7 @@ const Sidebar = () => {
                   <IoPerson /> Data Walas
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink to={"/dataSurat"}>
                   <IoDocuments /> Surat-surat
                 </NavLink>
@@ -51,7 +51,7 @@ const Sidebar = () => {
                 <NavLink to={"/dataKehadiran"}>
                   <IoList /> Kehadiran
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
             <p className="menu-label">Kurikulum</p>
             <ul className="menu-list text-sky-700">
@@ -161,7 +161,7 @@ const Sidebar = () => {
                     <IoPerson /> Data Walas
                   </NavLink>
                 </li>
-                <li>
+                {/* <li>
                   <NavLink to={"/dataSurat-user"}>
                     <IoDocuments /> Surat-surat
                   </NavLink>
@@ -170,7 +170,7 @@ const Sidebar = () => {
                   <NavLink to={"/dataKehadiran-user"}>
                     <IoList /> Kehadiran
                   </NavLink>
-                </li>
+                </li> */}
               </ul>
               <p className="menu-label">Kurikulum</p>
               <ul className="menu-list text-sky-700">

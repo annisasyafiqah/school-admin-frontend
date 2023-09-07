@@ -61,6 +61,14 @@ import DataSoalKelas7User from "./pages/DataSoalKelas7-user";
 import DataSoalKelas8User from "./pages/DataSoalKelas8-user";
 import DataSoalKelas9User from "./pages/DataSoalKelas9-user";
 import DashboardUser from "./pages/Dashboard-user";
+import PengumumanUser from "./pages/Pengumuman-user";
+import Pengumuman from "./pages/Pengumuman";
+import AddPengumuman from "./pages/AddPengumuman";
+import EditPengumuman from "./pages/EditPengumuman";
+import SaranaUser from "./pages/Pengumuman-user";
+import Sarana from "./pages/Pengumuman";
+import AddSarana from "./pages/AddSarana";
+import EditSarana from "./pages/EditDataSarana";
 
 function App() {
   return (
@@ -81,6 +89,14 @@ function App() {
           <Route path="/dataGuru-user" element={<DataGuruUser />} />
           <Route path="/dataGuru/add" element={<AddDataGuru />} />
           <Route path="/dataGuru/edit/:id" element={<EditDataGuru />} />
+          <Route path="/pengumuman" element={<Pengumuman />} />
+          <Route path="/pengumuman-user" element={<PengumumanUser />} />
+          <Route path="/pengumuman/add" element={<AddPengumuman />} />
+          <Route path="/pengumuman/edit/:id" element={<EditPengumuman />} />
+          <Route path="/sarana" element={<Sarana />} />
+          <Route path="/sarana-user" element={<SaranaUser />} />
+          <Route path="/sarana/add" element={<AddSarana />} />
+          <Route path="/sarana/edit/:id" element={<EditSarana />} />
           <Route path="/dataWalas" element={<DataWalas />} />
           <Route path="/dataWalas-user" element={<DataWalasUser />} />
           <Route path="/dataWalas/add" element={<AddDataWalas />} />

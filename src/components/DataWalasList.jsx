@@ -22,7 +22,7 @@ const DataWalasList = () => {
   return (
     <div>
       <h1 className="title text-sky-700 ">Data Walas</h1>
-      <h2 className="subtitle">List of Data Walas</h2>
+      <h2 className="subtitle">List Data Walas</h2>
       <Link to="/dataWalas/add" className="button is-primary mb-2">
         Tambah
       </Link>

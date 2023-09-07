@@ -2,41 +2,38 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
-const FormEditDataGuru = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [tugas, setTugas] = useState("");
+const FormEditSarana = () => {
+  const [nama, setNama] = useState("");
+  const [jumlah, setJumlah] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
-    const getDataGuruById = async () => {
+    const getSaranaById = async () => {
       try {
         const response = await axios.get(
-          `/api/dataGuru/${id}`
+          `/api/sarana/${id}`
         );
-        setName(response.data.name);
-        setEmail(response.data.email);
-        setTugas(response.data.tugas);
+        setNama(response.data.nama);
+        setJumlah(response.data.jumlah);
       } catch (error) {
         if (error.response) {
           setMsg(error.response.data.msg);
         }
       }
     };
-    getDataGuruById();
+    getSaranaById();
   }, [id]);
 
-  const updateDataGuru = async (e) => {
+  const updateSarana = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`/api/dataGuru/${id}`, {
-        name: name,
-        email: email,
-        tugas: tugas,
+      await axios.patch(`/api/sarana/${id}`, {
+        name: nama,
+        email: jumlah,
       });
-      navigate("/dataGuru");
+      navigate("/sarana");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -46,12 +43,12 @@ const FormEditDataGuru = () => {
 
   return (
     <div>
-      <h1 className="title">Data Guru</h1>
-      <h2 className="subtitle">Edit Data Guru</h2>
+      <h1 className="title">Data Sarana Prasarana</h1>
+      <h2 className="subtitle">Edit Data Sarana Prasarana</h2>
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
-            <form onSubmit={updateDataGuru}>
+            <form onSubmit={updateSarana}>
               <p className="has-text-centered">{msg}</p>
               <div className="field">
                 <label className="label">Nama</label>
@@ -59,36 +56,25 @@ const FormEditDataGuru = () => {
                   <input
                     type="text"
                     className="input"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Nama Guru"
+                    value={nama}
+                    onChange={(e) => setNama(e.target.value)}
+                    placeholder="Sarana Tentang"
                   />
                 </div>
               </div>
               <div className="field">
-                <label className="label">Email</label>
+                <label className="label">Jumlah</label>
                 <div className="control">
                   <input
-                    type="text"
-                    className="input"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Link"
+                    type="number"
+                    className="inout"
+                    value={jumlah}
+                    onChange={(e) => setJumlah(e.target.value)}
+                    placeholder="Jumlah"
                   />
                 </div>
               </div>
-              <div className="field">
-                <label className="label">Tugas</label>
-                <div className="control">
-                  <input
-                    type="text"
-                    className="input"
-                    value={tugas}
-                    onChange={(e) => setTugas(e.target.value)}
-                    placeholder="Link"
-                  />
-                </div>
-              </div>
+              
 
               <div className="field">
                 <div className="control">
@@ -105,4 +91,4 @@ const FormEditDataGuru = () => {
   );
 };
 
-export default FormEditDataGuru;
+export default FormEditSarana;
